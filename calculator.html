@@ -1,0 +1,96 @@
+<html>
+<head>
+<title> Calculator Using Javascript</title>
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+	<div class ="container">
+  	 <div class="calculator">
+			<form>
+				<div class="display">
+				<input type="text" name="display">	
+				</div>
+				<div>
+					<input type="button" value="AC"  onclick="display.value =''" class="operator">
+					<input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)" class="operator">
+					<input type="button" value="." onclick="display.value +='.'"class="operator">
+					<input type="button" value="/"  onclick="display.value +='/'" class="operator">
+				</div>
+					<div>
+						<input type="button" value="7" onclick="display.value +='7'">
+						<input type="button" value="8" onclick="display.value +='8'">
+						<input type="button" value="9"  onclick="display.value +='9'">
+						<input type="button" value="*"  onclick="display.value +='*'" class="operator">
+					</div>
+						<div>
+							<input type="button" value="4"  onclick="display.value +='4'">
+							<input type="button" value="5"  onclick="display.value +='5'">
+							<input type="button" value="6"  onclick="display.value +='6'">
+							<input type="button" value="-"  onclick="display.value +='-'" class="operator">
+						</div>
+							<div>
+								<input type="button" value="1"  onclick="display.value +='1'">
+								<input type="button" value="2"  onclick="display.value +='2'">
+								<input type="button" value="3"  onclick="display.value +='3'">
+								<input type="button" value="+"  onclick="display.value +='+'" class="operator">
+							</div>
+								<div>
+									<input type="button" value="00"  onclick="display.value +='00'">
+									<input type="button" value="0"  onclick="display.value +='0'">
+									<input type="button" value="=" class="equal" onclick="display.value = eval(display.value)" class="operator">
+								</div>
+			
+
+
+			</form>
+   	</div>
+
+	</div>
+
+ 
+ <script>
+ function send(i){
+ x=document.getElementById("i1");
+ 
+ switch(i){
+case0: x.value+=0; break;
+case1: x.value+=1; break; // x="1" => x=x+"1" => 11
+case2: x.value+=2; break;
+case3: x.value+=3; break;
+case4: x.value+=4; break;
+case5: x.value+=5; break;
+case6: x.value+=6; break;
+case7: x.value+=7; break;
+case8: x.value+=8; break;
+case9: x.value+=9; break;
+
+case '+': x.value+='+'; break;
+case '-': x.value+='-'; break;
+case '*': x.value+='*'; break;
+case '/': x.value+='/'; break;
+case '.': x.value+='.'; break;
+case 'AC': x.value+=""; break;
+
+case'=':
+		result=eval(x.value); //"12+13-2"
+		x.value=result;
+		break;
+case'log':
+		result=eval(Math.log10(x.value)); 
+		x.value=result;
+		break;
+case'√':
+		result=eval(Math.sqrt(x.value)); 
+		x.value=result;
+		break;
+case'1/x':
+		result=eval(1/x.value); 
+		x.value=result;
+		break;
+} 
+ }
+ </script>
+</body>
+
+</html>
